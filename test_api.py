@@ -14,3 +14,13 @@ def test_welcome_root():
     response = client.get("/")
     assert response.status_code == 200
     assert response.json() == {"message": "Welcome to Check Parity API !"}
+
+
+def test_check_parity():
+    response = client.post("/check_parity", json={"number": 4})
+    assert response.status_code == 200
+    assert response.json() == {"number": 4, "parity": "even"}
+
+    response = client.post("/check_parity", json={"number": 5})
+    assert response.status_code == 200
+    assert response.json() == {"number": 5, "parity": "odd"}
