@@ -15,10 +15,12 @@ def _ckeck_parity(number: int) -> str:
     else:
         return "odd"
 
-
 @app.get("/healthz")
 async def health_check():
     return {"status": "OK"}
+
+
+
 
 
 @app.post("/check_parity")
