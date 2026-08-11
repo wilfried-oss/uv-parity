@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.card {
+    background: #ffffff;
+    padding: 40px 32px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    border: 1px solid #eaeaea;
+    text-align: center;
+    width: 100%;
+    max-width: 360px;
+}
+
+h1 {
+    color: #2563eb;
+    font-size: 1.8rem;
+    margin-bottom: 6px;
+}
+
+.subtitle {
+    color: #888;
+    font-size: 0.95rem;
+    margin-bottom: 24px;
+}
+
+.input-group {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+#numberInput {
+    flex: 1;
+    min-width: 0;
+    padding: 12px 14px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+#numberInput:focus {
+    border-color: #2563eb;
+}
+
+#checkBtn {
+    flex-shrink: 0;
+    padding: 12px 18px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+}
+
+#checkBtn:hover {
+    background: #1d4ed8;
+}
+
+#checkBtn:active {
+    transform: scale(0.97);
+}
+
+.result {
+    min-height: 28px;
+    font-size: 1.15rem;
+    font-weight: 600;
+    padding: 10px;
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+
+.result.even {
+    background: #e6f7ee;
+    color: #1e9e5c;
+}
+
+.result.odd {
+    background: #fdeeee;
+    color: #d9534f;
+}
+
+.result.error {
+    background: #fff8e6;
+    color: #b8860b;
+    font-size: 0.95rem;
+}
