@@ -23,6 +23,8 @@ async def health_check():
 
 
 
+
+
 @app.post("/check_parity")
 def check_parity(request: NumberRequest):
     number = request.number
