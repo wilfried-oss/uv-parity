@@ -8,7 +8,7 @@ $(function () {
 
   $("#numberInput").on("input", function () {
     let value = $(this).val();
-    if (!/[0-9]/.test(value)) {
+    if (!/[0-9-]/.test(value)) {
       value = value.substring(0, value.length - 1);
     }
     $(this).val(value);
