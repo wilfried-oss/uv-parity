@@ -13,7 +13,9 @@ def test_health_check():
 def test_welcome_root():
     response = client.get("/")
     assert response.status_code == 200
-    assert response.json() == {"message": "Welcome to Check Parity API !"}
+    assert response.json() == {
+        "message": "Welcome to Check Parity API based on python !"
+    }
 
 
 def test_check_parity():
