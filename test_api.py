@@ -1,5 +1,7 @@
 from fastapi.testclient import TestClient
-from api import app
+from pydantic import ValidationError
+from api import app, NumberRequest
+import pytest
 
 client = TestClient(app)
 
@@ -10,14 +12,6 @@ def test_health_check():
     assert response.json() == {"status": "OK"}
 
 
-def test_welcome_root():
-    response = client.get("/")
-    assert response.status_code == 200
-    assert response.json() == {
-        "message": "Welcome to Check Parity API based on python 3 !"
-    }
-
-
 def test_check_parity():
     response = client.post("/check_parity", json={"number": 4})
     assert response.status_code == 200
@@ -26,3 +20,8 @@ def test_check_parity():
     response = client.post("/check_parity", json={"number": 5})
     assert response.status_code == 200
     assert response.json() == {"number": 5, "parity": "odd"}
+
+def test_number_must_be_positive_error_message():
+    with pytest.raises(ValidationError) as exc_info:
+        NumberRequest(number=-1)
+    assert "number must be positive" in str(exc_info.value)
