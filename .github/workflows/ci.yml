@@ -3,6 +3,7 @@ name: CI
 on:
   push:
   pull_request:
+    branches: [main]
 
 jobs:
   lint-and-test:
@@ -21,6 +22,9 @@ jobs:
         run: uv sync
 
       - name: Check linting
+        run: uv run ruff check .
+
+      - name: Check formatting
         run: uv run ruff format --check .
 
       - name: Run unit tests
