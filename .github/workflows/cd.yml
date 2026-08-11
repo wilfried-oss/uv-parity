@@ -38,4 +38,4 @@ jobs:
           context: .
           push: true
           tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/uv-parity:${{ steps.vars.outputs.sha_short }}
+            ${{ secrets.DOCKERHUB_USERNAME }}/uv-parity:1.0.0-${{ steps.vars.outputs.sha_short }}
