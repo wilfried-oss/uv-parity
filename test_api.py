@@ -14,7 +14,7 @@ def test_welcome_root():
     response = client.get("/")
     assert response.status_code == 200
     assert response.json() == {
-        "message": "Welcome to Check Parity API based on python !"
+        "message": "Welcome to Check Parity API based on python 3 !"
     }
 
 

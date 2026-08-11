@@ -22,7 +22,7 @@ async def health_check():
 
 @app.get("/")
 def welcome_root():
-    return {"message": "Welcome to Check Parity API based on python !"}
+    return {"message": "Welcome to Check Parity API based on python 3 !"}
 
 
 @app.post("/check_parity")
